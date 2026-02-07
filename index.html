@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day Kratika 🌹</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(circle at top, #ffb6c1, #ff758c, #ff4d6d);
+        overflow-x: hidden;
+        text-align: center;
+        color: #fff;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 50px;
+        animation: fadeDown 1.8s ease;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .rose {
+        font-size: 95px;
+        margin: 20px 0;
+        animation: float 3s ease-in-out infinite;
+        filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+    }
+
+    .card {
+        background: rgba(255,255,255,0.22);
+        backdrop-filter: blur(12px);
+        padding: 35px;
+        margin: 35px auto;
+        width: 85%;
+        max-width: 700px;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        animation: fadeUp 1.8s ease;
+    }
+
+    button {
+        margin-top: 18px;
+        background: linear-gradient(135deg, #ff4d6d, #ff1e4d);
+        border: none;
+        padding: 14px 32px;
+        color: white;
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.4s;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    footer {
+        margin: 45px 0 25px;
+        font-size: 1.1rem;
+        opacity: 0.95;
+    }
+
+    .from {
+        font-weight: 600;
+        letter-spacing: 1px;
+        animation: fadeUp 2.2s ease;
+    }
+
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 22px;
+        animation: rise 7s linear infinite;
+        opacity: 0.75;
+    }
+
+    @keyframes rise {
+        0% { transform: translateY(0) scale(0.8); opacity: 0; }
+        20% { opacity: 1; }
+        100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Happy Rose Day 🌹</h1>
+<p>For someone who makes days softer…</p>
+
+<div class="rose">🌹</div>
+
+<div class="card">
+    <h2>Dear Kratika 💖</h2>
+    <p>
+        Some things don’t need many words —  
+        like the way a rose feels special just by existing.
+        This page is just a small reminder
+        that you truly matter 🌸
+    </p>
+</div>
+
+<div class="card">
+    <h2>Just One Thought</h2>
+    <p id="msg">Tap gently 💌</p>
+    <button onclick="showMessage()">Open</button>
+</div>
+
+<footer>
+    <div class="from">— From Aman 🌹</div>
+</footer>
+
+<script>
+    function showMessage() {
+        document.getElementById("msg").innerText =
+        "If roses had feelings, they’d smile around you. Happy Rose Day, Kratika 🌹💗";
+    }
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (5 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8000);
+    }, 450);
+</script>
+
+</body>
+  </html>
