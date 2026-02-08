@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Rose Day Kratika 🌹</title>
+<title>Happy Propose Day Kratika 💍</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
     body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background: radial-gradient(circle at top, #ffb6c1, #ff758c, #ff4d6d);
+        background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
         overflow-x: hidden;
         text-align: center;
         color: #fff;
@@ -17,63 +17,70 @@
 
     h1 {
         font-size: 3rem;
-        margin-top: 50px;
-        animation: fadeDown 1.8s ease;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        margin-top: 55px;
+        animation: fadeDown 2s ease;
+        text-shadow: 0 5px 20px rgba(0,0,0,0.35);
     }
 
     p {
-        font-size: 1.1rem;
-        line-height: 1.8;
+        font-size: 1.15rem;
+        line-height: 1.9;
     }
 
-    .rose {
-        font-size: 95px;
-        margin: 20px 0;
-        animation: float 3s ease-in-out infinite;
-        filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+    .ring {
+        font-size: 90px;
+        margin: 25px 0;
+        animation: float 3.5s ease-in-out infinite;
     }
 
     .card {
         background: rgba(255,255,255,0.22);
-        backdrop-filter: blur(12px);
-        padding: 35px;
-        margin: 35px auto;
-        width: 85%;
-        max-width: 700px;
-        border-radius: 25px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-        animation: fadeUp 1.8s ease;
+        backdrop-filter: blur(14px);
+        padding: 40px;
+        margin: 40px auto;
+        width: 88%;
+        max-width: 720px;
+        border-radius: 30px;
+        box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+        animation: fadeUp 2s ease;
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     button {
-        margin-top: 18px;
-        background: linear-gradient(135deg, #ff4d6d, #ff1e4d);
+        background: linear-gradient(135deg, #ff4d6d, #ff1e56);
         border: none;
-        padding: 14px 32px;
+        padding: 14px 36px;
         color: white;
-        font-size: 1rem;
-        border-radius: 30px;
+        font-size: 1.05rem;
+        border-radius: 35px;
         cursor: pointer;
         transition: 0.4s;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    button.no {
+        background: linear-gradient(135deg, #999, #777);
     }
 
     button:hover {
         transform: scale(1.08);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
     footer {
-        margin: 45px 0 25px;
-        font-size: 1.1rem;
-        opacity: 0.95;
+        margin: 50px 0 25px;
+        font-size: 1.15rem;
     }
 
     .from {
         font-weight: 600;
         letter-spacing: 1px;
-        animation: fadeUp 2.2s ease;
     }
 
     /* Animations */
@@ -84,76 +91,102 @@
     }
 
     @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-40px); }
+        from { opacity: 0; transform: translateY(-45px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(40px); }
+        from { opacity: 0; transform: translateY(45px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Floating hearts */
-    .heart {
+    /* Rose petals */
+    .petal {
         position: fixed;
-        bottom: -20px;
-        font-size: 22px;
-        animation: rise 7s linear infinite;
-        opacity: 0.75;
+        top: -20px;
+        font-size: 24px;
+        animation: fall linear infinite;
+        opacity: 0.9;
     }
 
-    @keyframes rise {
-        0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
         20% { opacity: 1; }
-        100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+        100% {
+            transform: translateY(120vh) rotate(360deg);
+            opacity: 0;
+        }
     }
 </style>
 </head>
 
 <body>
 
-<h1>Happy Rose Day 🌹</h1>
-<p>For someone who makes days softer…</p>
+<h1>Happy Propose Day 💍</h1>
+<p>Some feelings deserve a moment…</p>
 
-<div class="rose">🌹</div>
+<div class="ring">💖</div>
 
-<div class="card">
-    <h2>Dear Kratika 💖</h2>
+<div class="card" id="mainCard">
+    <h2>Dear Kratika 🌸</h2>
     <p>
-        Some things don’t need many words —  
-        like the way a rose feels special just by existing.
-        This page is just a small reminder
-        that you truly matter 🌸
+        Somewhere between smiles and small talks,  
+        you became someone truly special to me.  
+        So today, I just want to ask this  
+        from my heart 💗
     </p>
 </div>
 
-<div class="card">
-    <h2>Just One Thought</h2>
-    <p id="msg">Tap gently 💌</p>
-    <button onclick="showMessage()">Open</button>
+<div class="card" id="questionCard">
+    <h2>My Question</h2>
+    <p id="msg">
+        Kratika, would you like to walk this journey with me? 💍
+    </p>
+
+    <div class="buttons">
+        <button onclick="yesAnswer()">YES 💖</button>
+        <button class="no" onclick="noAnswer()">NO 🌸</button>
+    </div>
 </div>
 
 <footer>
-    <div class="from">— From Aman 🌹</div>
+    <div class="from">— From Aman 💖</div>
 </footer>
 
 <script>
-    function showMessage() {
-        document.getElementById("msg").innerText =
-        "If roses had feelings, they’d smile around you. Happy Rose Day, Kratika 🌹💗";
+    function yesAnswer() {
+        document.getElementById("questionCard").innerHTML = `
+            <h2>💖 She Said YES 💖</h2>
+            <p>
+                This moment means more to me than words can say.  
+                Thank you for choosing to walk with me.  
+                I promise to respect, care, and smile with you 🌹
+            </p>
+        `;
+        startPetals();
     }
 
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "💖";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (5 + Math.random() * 3) + "s";
-        document.body.appendChild(heart);
+    function noAnswer() {
+        document.getElementById("msg").innerText =
+        "That’s okay 🌸 Thank you for being honest. You’ll always be special 💗";
+    }
 
-        setTimeout(() => heart.remove(), 8000);
-    }, 450);
+    function startPetals() {
+        setInterval(() => {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.innerHTML = "🌹";
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.animationDuration = (6 + Math.random() * 4) + "s";
+            document.body.appendChild(petal);
+
+            setTimeout(() => petal.remove(), 10000);
+        }, 400);
+    }
 </script>
 
 </body>
-  </html>
+</html>
